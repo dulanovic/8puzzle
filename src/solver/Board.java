@@ -1,3 +1,4 @@
+package solver;
 
 import edu.princeton.cs.algs4.In;
 // import edu.princeton.cs.algs4.StdOut;
@@ -66,7 +67,7 @@ public class Board {
         return true;
     }
 
-    /* public Board twin() {
+    /* public solver.Board twin() {
         int[] values = new int[4];
         int counter = 0;
         int[] blankSquare = findBlankSquare();
@@ -97,7 +98,7 @@ public class Board {
         int temp = twinBlocks[values[0]][values[1]];
         twinBlocks[values[0]][values[1]] = twinBlocks[values[2]][values[3]];
         twinBlocks[values[2]][values[3]] = temp;
-        return new Board(twinBlocks);
+        return new solver.Board(twinBlocks);
     } */
     public Board twin() {
         int[][] twinBlocks = arrayCopy(blocks);
@@ -136,7 +137,7 @@ public class Board {
             Board b = moveSquare(blankSquare, 1, 0, 0, 0);
             listNeighbors.add(b);
         }
-        /* for (Board b : listNeighbors) {
+        /* for (solver.Board b : listNeighbors) {
             StdOut.printf("%s\n", b);
         } */
         return listNeighbors;
@@ -236,7 +237,7 @@ public class Board {
 
     public static void main(String[] args) {
 
-        In in = new In("8puzzle/puzzle3x3-01.txt");
+        In in = new In("_data/puzzle3x3-01.txt");
         int n = in.readInt();
         int[][] blocks = new int[n][n];
         for (int i = 0; i < n; i++) {
@@ -244,22 +245,22 @@ public class Board {
                 blocks[i][j] = in.readInt();
             }
         }
-        /* Board initial = new Board(blocks);
+        /* solver.Board initial = new solver.Board(blocks);
         StdOut.println(initial);
         StdOut.printf("isGoal() ---> %s\n", initial.isGoal());
         StdOut.printf("%s\n", initial.toString());
         StdOut.printf("manhattan() ---> %d\n", initial.manhattan());
-        Board twin1 = initial.twin();
+        solver.Board twin1 = initial.twin();
         StdOut.printf("TWIN 1\n%s\n", twin1);
         StdOut.printf("hamming() ---> %d\n", initial.hamming());
         StdOut.printf("manhattan() ---> %d\n", initial.manhattan());
-        Board twin2 = initial.twin();
+        solver.Board twin2 = initial.twin();
         StdOut.printf("TWIN 2\n%s\n", twin2);
         StdOut.printf("twin1 == twin2 ---> %s\n", twin1.equals(twin2)); */
         /* int counter = 0;
         for (int i = 0; i < 100000; i++) {
             int j = i + 1;
-            Board bTwin = b.twin();
+            solver.Board bTwin = b.twin();
             StdOut.printf("%d. %s\n", j, b.equals(bTwin));
             if (b.equals(bTwin)) {
                 counter++;

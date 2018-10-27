@@ -1,3 +1,4 @@
+package solver;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.MinPQ;
@@ -119,7 +120,7 @@ public class Solver {
 
     public static void main(String[] args) {
 
-        In in = new In("8puzzle/puzzle47.txt");
+        In in = new In("_data/puzzle3x3-05.txt");
         int n = in.readInt();
         int[][] blocks = new int[n][n];
         for (int i = 0; i < n; i++) {
